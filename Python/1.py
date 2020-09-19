@@ -18,7 +18,7 @@ def mutl(num, zs):
         key[zs] = (mutl(num, zs / 2) * mutl(num, zs - zs / 2)) % 10000000033
     return key[zs]
 
-def main():
+def main(): 
 
     a = int(input("a:"))
     b = int(input("b:"))
