@@ -21,13 +21,13 @@ def getdata(CAN_ID,start_d,num,dx):
         for row in f_csv:
             if row[4] == CAN_ID:
                 if dx == 0:
-                    data = row[5+start_d] * 256 + row[6+start_d]
+                    data = row[6+start_d] * 256 + row[7+start_d]
                 elif  dx == 1:
-                    data = row[6+start_d] * 256 + row[5+start_d]
+                    data = row[7+start_d] * 256 + row[6+start_d]
                 vec.append(data)
-    plt.plot(vec)
-    plt.show()
-
+    print("Analyse End")
+    return vec
 
 if __name__ == '__main__':
-    getdata("1100000a\t",2,2,1)
+    plt.plot(getdata("11000001\t",0,2,1))
+    plt.show()
